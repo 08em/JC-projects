@@ -1,0 +1,5 @@
+a 2D array is an array of arrays, like a table which has rows and columns.
+
+declaring a 2d array :
+
+DECLARE marks : ARRAY[1;10,1;5] OF INTEGER

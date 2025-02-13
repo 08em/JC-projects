@@ -1,0 +1,16 @@
+largest of two pseudocode
+
+DECLARE Num1 : INTEGER
+DECLARE Num2 : INTEGER
+
+OUTPUT "input first number"
+INPUT Num1
+OUTPUT "input second number"
+INPUT Num2
+
+IF Num1 > Num2 
+    THEN
+        OUTPUT Num1, "is the largest number"
+    ELSE
+        OUTPUT Num2, "is the largest number"
+ENDIF

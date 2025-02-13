@@ -1,0 +1,13 @@
+DECLARE myArr : ARRAY[0:9] OF INTEGER
+FOR Count <- 0 TO 9
+    myArr[Count] <- ""
+NEXT Count 
+# lines 2 to 4 is the pseudocode ver of arrays.py line 1
+
+FOR Count <- 0 TO 9
+    OUTPUT myArr[Count]
+NEXT Count
+
+FOR Count <- 0 TO 9
+    INPUT myArr[Count]
+NEXT Count

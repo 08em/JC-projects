@@ -1,0 +1,22 @@
+PROCEDURE printMyName()
+    OUTPUT "my name is Khan"
+ENDPROCEDURE
+
+CALL printMyName()
+
+----------------------------------------------------------------------------------------------
+# procedure with parameters
+
+PROCEDURE sayHello(ByValue name : STRING)
+    OUTPUT "hello", name
+ENDPROCEDURE
+
+CALL sayHello("Shuaib")
+
+---------------------------------------------------------------------------------------------------------
+
+PROCEDURE addTwoNumbers(num1 : INTEGER , num2 : INTEGER)
+    DECLARE Sum : INTEGER
+    Sum <- num1 + num2
+    OUTPUT "the sum of", num1, "and", num2, "is", sum
+ENDPROCEDURE

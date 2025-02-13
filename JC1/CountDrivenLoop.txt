@@ -1,0 +1,10 @@
+DECLARE Counter : INTEGER
+
+# for loop
+FOR Counter <- 1 TO 10
+    OUTPUT "My name is Khan"
+NEXT Counter
+
+FOR Counter <- 1 TO 10
+    OUTPUT Counter
+NEXT Counter

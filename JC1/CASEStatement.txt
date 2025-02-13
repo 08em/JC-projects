@@ -1,0 +1,51 @@
+CASE Statement pseudocode
+Algorithm pseudocode to input number between 1 and 7 (inclusive) and output the corresponding day of the week. 
+Output error message if value is outside of the range. 
+(Assume Sunday is the first day of the week)
+
+DECLARE Num : INTEGER
+
+OUTPUT "Input number"
+INPUT Num
+IF Num = 1
+    THEN 
+        OUTPUT "It is Sunday"
+    ELSEIF (Num = 2)
+        THEN 
+            OUTPUT "It is Monday"
+        ELSEIF Num = 3
+            THEN
+                OUTPUT "It is Tuesday"
+            ELSEIF Num = 4
+                    THEN
+                        OUTPUT "It is Wednesday"
+                    ELSEIF Num = 5
+                            THEN
+                                OUTPUT "It is Thursday"
+                            ELSEIF Num = 6
+                                    THEN
+                                        OUTPUT "It is Friday"
+                                    ELSEIF Num = 7
+                                            THEN
+                                                OUTPUT "It is Saturday"
+                                            ELSE
+                                                OUTPUT "Error"
+                                    ENDIF
+                            ENDIF
+                    ENDIF
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+
+
+CASE OF Num 
+    CASE 1 : "It is Sunday"
+    CASE 2 : "It is Monday"
+    CASE 3 : "It is Tuesday"
+    CASE 4 : "It is Wednesday"
+    CASE 5 : "It is Thursday"
+    CASE 6 : "It is Friday"
+    CASE 7 : "It is Saturday"
+    OTHERWISE "Error, invalid day number"
+ENDCASE

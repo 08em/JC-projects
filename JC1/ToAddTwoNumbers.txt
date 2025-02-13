@@ -1,0 +1,32 @@
+pseudocode to add 2 numbers
+
+DECLARE Number1 : INTEGER
+DECLARE Number2 : INTEGER
+DECLARE Sum : INTEGER
+DECLARE Diff : INTEGER
+DECLARE Prod : INTEGER
+DECLARE Quot : REAL
+DECLARE Rem : INTEGER
+DECLARE IntQuot : INTEGER
+
+OUTPUT "please enter first number"
+INPUT Number1 
+OUTPUT "please enter second number"
+INPUT Number2 
+
+Sum <- Number1 + Number2
+Diff <- Number1 - Number2
+Prod <- Number1 * Number2
+Quot <- Number1 / Number2
+Rem <- MOD(Number1, Number2)
+IntQuot <- DIV(Number1, Number2)
+
+OUTPUT "the sum of", Number1, "and", Number2, "is", Sum
+OUTPUT "the difference of", Number1, "and", Number2, "is", Diff
+OUTPUT "the product of", Number1, "and", Number2, "is", Prod
+OUTPUT "the quotient of", Number1, "and", Number2, "is", Quot
+OUTPUT "the integer quotient of", Number1, "and", Number2, "is", IntQuot
+OUTPUT "the remainder of", Number1, "and", Number2, "is", Rem
+
+
+

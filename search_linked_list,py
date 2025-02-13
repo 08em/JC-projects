@@ -1,0 +1,31 @@
+dataArray = [5, 6, 9, 3, None, None, None]
+pointerArray = [-1, 0, 1, 2, 5, 6, -1]
+
+startPointer = 3
+heapPointer = 4
+pointer = -1
+
+def search(item) :
+    global pointer
+    i = startPointer
+    found = False
+    while i != -1 :
+        if item == dataArray[i] :
+            found = True
+            pointer = pointerArray[i]
+        i = i - 1
+    
+    if found == False:
+        print("not found, -1")
+    else:
+        print(pointer)
+
+
+
+
+search(7)
+search(3)
+search(10)
+search(6)
+search(13)
+search(5)

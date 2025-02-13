@@ -1,0 +1,13 @@
+# also known as pre-condition loop as condition is tested at the beginning / start of the loop
+# body of loop is executed as long as the logical condition is true
+# use while loop when you dont know how many times you  want to repeat something
+
+WHILE (logical statement) 
+    body of the loop
+ENDWHILE
+
+Count <- 1
+WHILE Count <= 10
+    OUTPUT "My name is Khan"
+    Count <- Count + 1
+ENDWHILE

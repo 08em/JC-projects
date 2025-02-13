@@ -1,0 +1,10 @@
+condition to use binary search on array - array MUST be sorted
+
+steps:
+1. sort array if not yet  sorted
+2. find middle index of the array
+3. compare search element w value in middle index n check if midvalue is higher or lower than search element
+4. if midvalue > se then low <- mid +1 , low stays the same
+if midvalue < se then high <- mid - 1, high stays the same
+5. repeat steps 2 to 4 until se is found
+

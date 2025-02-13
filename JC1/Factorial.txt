@@ -1,0 +1,16 @@
+write a pseudocode and algorithm to calculate the factorial of a number using function called fact()
+which takes an input number and returns the factorial of that number
+
+
+FUNCTION fact(num : INTEGER) RETURNS INTEGER
+    sum = 1
+    FOR index <- 1 TO num
+        sum <- sum * index
+    NEXT index
+    RETURN sum
+ENDFUNCTION
+
+OUTPUT "enter number to find its factorial"
+INPUT Number
+tempSum <- fact(Number)
+OUTPUT "the factorial of", Number, "is", tempSum

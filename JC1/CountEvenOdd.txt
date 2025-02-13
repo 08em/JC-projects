@@ -1,0 +1,24 @@
+A procedure Count() will: 
+1. input a value (all values will be positive integers) 
+2. count the number of odd values and count the number of even values 
+3. repeat from step 1 until the value input is 99 
+4. output the two count values, with a suitable message. 
+The value 99 must not be counted. Write an algorithm as pseudocode for the procedure Count().
+
+PROCEDURE Count() 
+    even = 0
+    odd = 0
+    OUTPUT "enter number"
+    WHILE num <> 99 DO
+    INPUT num
+        IF MOD(num,2) = 0 
+            THEN
+                even = even + 1
+            ELSE
+            odd = odd + 1
+        ENDIF
+    ENDWHILE
+    OUTPUT "there are", even, "even numbers and", odd, "odd numbers"
+ENDPROCEDURE
+
+CALL Count()

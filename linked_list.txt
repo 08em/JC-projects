@@ -1,0 +1,24 @@
+DECLARE dataArray : ARRAY[0:6]  OF INTEGER
+DECLARE pointerArray : ARRAY[0:6]  OF INTEGER
+DECLARE startPointer : INTEGER
+DECLARE heapPointer : INTEGER
+DECLARE Index : INTEGER
+
+startPointer <- -1
+heapPointer <- 0
+
+FOR Index <- 0 TO 6
+    pointerArray[Index] <- Index + 1
+NEXT Index
+
+pointerArray[6] <- -1
+
+PROCEDURE addToList(item:INTEGER) 
+    DECLARE tempPointer : INTEGER
+
+    IF heapPointer <> -1
+        THEN
+            tempPointer <- startPointer
+            heapPointer <- startPointer
+            
+ENDPROCEDURE

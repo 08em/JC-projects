@@ -1,0 +1,19 @@
+DECLARE queue : ARRAY[1:5] OF INTEGER
+DECLARE frontPointer : INTEGER
+DECLARE rearPointer : INTEGER
+DECLARE maxSize : INTEGER
+DECLARE lenOfQueue : INTEGER
+
+FOR Count <- 1 TO 5
+        queue[Count] = 0
+NEXT Count
+
+frontPointer <- 
+rearPointer <-
+frontPointer <- 
+rearPointer <-
+
+
+PROCEDURE enqueue(item:INTEGER)
+    IF 
+ENDPROCEDURE

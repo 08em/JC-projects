@@ -1,0 +1,14 @@
+# arrays are a set of consecutive memory locations where you can store data in successive memory locations
+
+DECLARE StudentNames : ARRAY[1:10] OF STRING
+DECLARE StudentMarks : ARRAY[1:10] OF INTEGER
+DECLARE Counter : INTEGER
+
+OUTPUT "Input student names"
+FOR Counter <- 1 TO 10
+    INPUT StudentNames[Counter]
+NEXT Counter
+
+FOR Counter <- 1 TO 10
+    OUTPUT StudentNames[Counter]
+NEXT Counter

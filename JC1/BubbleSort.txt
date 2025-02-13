@@ -1,0 +1,26 @@
+# pseudocode to bubble sort
+
+DECLARE myArray : ARRAY[0:10] OF INTEGER
+DECLARE Swap : BOOLEAN
+DECLARE top : INTEGER
+DECLARE temp : INTEGER
+DECLARE index : INTEGER
+
+
+
+REPEAT
+    FOR index <- 0 TO (top-1)
+    Swap <- FALSE
+        IF myArray[index] > myArray[index+1]
+            THEN
+                    temp <- myArray[index]
+                    myArray[index] <- myArray[index+1]
+                    myArray[index+1] <- temp
+                    Swap <- TRUE
+        ENDIF
+    NEXT index
+    top <- top - 1
+UNTIL (Swap = FALSE) OR (top = 0)
+
+                
+

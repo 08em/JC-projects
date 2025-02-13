@@ -1,0 +1,15 @@
+pseudocode to input the radius and calculate the area of a circle
+
+DECLARE Radius : REAL
+DECLARE Area : REAL
+CONSTANT PI <- 3.14
+
+OUTPUT "please enter the radius of the circle"
+INPUT Radius
+IF Radius <= 0
+    THEN
+        OUTPUT "Radius can't be 0, invalid"
+    ELSE
+        Area <- PI * Radius * Radius
+OUTPUT "The area of the circle with radius", Radius, "is", Area
+ENDIF

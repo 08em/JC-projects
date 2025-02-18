@@ -1,0 +1,45 @@
+hierarchical data structure (not linear) made up of nodes 
+data is stored in form of nodes : all nodes connected by links/branches/edges
+top node is called root node
+node that comes from root node is called child node: child node can have their own child nodes as well
+nodes that dont have any children called leaf/terminal 
+
+binary tree - each node can only have 1 parent and max. 2 children (*ALEVEL ONLY HAS BINARY TREES!!)
+binary trees will always have unique values
+each node can have at most 2 child nodes (0,1 or 2)
+alevel binary tree is actually a binary search tree irl
+deleting node from tree was removed frm syllabus
+child node on the left = left child , child node on the right = right child
+value of left child must ALWAYS be SMALLER than parent, value of right child must ALWAYS be BIGGER than the parent
+everyth on the left under the root can be called left sub tree
+
+
+methods to traverse the tree:
+* left node is ALWAYS visited before the right
+    ex1: 
+            9
+        5       13
+    4     7         15
+
+    ex2: 
+            *
+        +       -
+    A     B    C    D
+
+
+1. preorder
+    prior to visitng the children, visit the root, then left, then right
+    ex2: 9, 5, 4, 7, 13, 15
+    ex2 : *+AB-CD
+
+2. inorder
+    visit left, then root, then right
+    ex1: 4, 5, 7, 9, 13, 15
+    ex2 : A+B*C-D
+
+3. postorder
+    visit left, right, root
+    ex1: 4, 7, 5, 15, 13, 9
+    ex2: AB+CD-*
+
+null pointer can be theta, /, -1 or null (use -1 if not given)

@@ -34,5 +34,4 @@ def insertToTree(item):
         if rootPointer == -1:
             rootPointer = newItemPointer
             tree[newItemPointer][1] = item
-        
         if item > tree[]

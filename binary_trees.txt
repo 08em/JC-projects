@@ -1,0 +1,39 @@
+TYPE TreeNode
+    DECLARE Leftpointer : INTEGER
+    DECLARE Data : INTEGER
+    DECLARE RightPointer : INTEGER
+ENDTYPE
+
+# pointers must ALWAYS be integer
+
+DECLARE Tree : ARRAY [0:9] OF TreeNode
+DECLARE FreePointer : INTEGER
+DECLARE RootPointer : INTEGER
+
+FreePointer <- 0
+RootPointer <- -1
+
+FOR Count <- 1 TO 9
+    Tree[Count].LeftPointer <- -1
+    Tree[Count].Data <- Count
+    Tree[Count].RightPointer <- -1
+NEXT Count
+
+Tree[9].Data <- -1
+
+FUNCTION searchTree(item :  INTEGER) 
+    DECLARE pointer : INTEGER
+
+    pointer = RootPointer
+    WHILE NOT(pointer = -1) AND NOT(item = Tree[pointer].Data)
+        IF Tree[pointer].Data > item
+            THEN 
+                pointer = Tree[pointer].LeftPointer
+        ENDIF
+        IF Tree[pointer].Data < item
+            THEN 
+                pointer = Tree[pointer].RightPointer
+    ENDWHILE
+
+    RETURN pointer
+ENDFUNCTION

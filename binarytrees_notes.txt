@@ -42,4 +42,7 @@ methods to traverse the tree:
     ex1: 4, 7, 5, 15, 13, 9
     ex2: AB+CD-*
 
-null pointer can be theta, /, -1 or null (use -1 if not given)
+null pointer can be theta, /, -1 or null (use -1 if not given) 
+freepointer always points to next free loc (like heap pointer in linked list)
+root pointer always points to root n never changes (like start pointer in linked list) ; set it to -1/0 when tree is empty depending on if the array is a 0/1 based array
+

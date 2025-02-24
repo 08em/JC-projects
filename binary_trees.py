@@ -25,13 +25,45 @@ else:
 
 
 def insertToTree(item):
-    
+    global freePointer, rootPointer
     if freePointer == -1:
         print("tree is full")
     else:
         newItemPointer = freePointer
         freePointer = tree[newItemPointer][1]
+
         if rootPointer == -1:
             rootPointer = newItemPointer
             tree[newItemPointer][1] = item
-        if item > tree[]
+        else: 
+            tempPointer = rootPointer
+            if item > tree[tempPointer][1] :
+                while tree[tempPointer][2] != -1:
+                    tempPointer = tree[tempPointer][2]
+                if item > tree[tempPointer][1] :
+                    tree[tempPointer][2] = newItemPointer
+                else: 
+                    tree[tempPointer][0] = newItemPointer
+
+            else: 
+                while tree[tempPointer][0] != -1:
+                    tempPointer = tree[tempPointer][0] 
+                tree[tempPointer][0] = newItemPointer
+                if item > tree[tempPointer][1] :
+                    tree[tempPointer][2] = newItemPointer
+                else: 
+                    tree[tempPointer][0] = newItemPointer
+
+            tree[newItemPointer][1] = item
+
+print(tree)
+insertToTree(3)
+print(tree)
+insertToTree(20)
+print(tree)
+insertToTree(16)
+print(tree)
+insertToTree(2)
+print(tree)
+insertToTree(8)
+print(tree)

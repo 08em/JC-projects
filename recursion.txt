@@ -1,0 +1,31 @@
+FUNCTION fact(num : INTEGER) RETURNS INTEGER
+    DECLARE ans : INTEGER
+
+    IF num = 0
+        THEN
+            ans <- 1
+    ELSE
+        ans <- num * fact(num-1)
+    ENDIF
+    RETURN ans
+ENDFUNCTION
+
+
+| Call Number | Function Call | num | ans         | Return Value |
+|-------------|---------------|-----|-------------|--------------|
+| 1           | fact(4)       | 4   | 4 * fact(3) |              | winding
+| 2           | fact(3)       | 3   | 3 * fact(2) |              | winding
+| 3           | fact(2)       | 2   | 2 * fact(1) |              | winding
+| 4           | fact(1)       | 1   | 1 * fact(0) |              | winding
+| 5           | fact(0)       | 0   | 1           | 1            | base case
+| Continue 4  | fact(1)       | 1   | 1 * 1       | 1            | unwinding
+| Continue 3  | fact(2)       | 2   | 2 * 1       | 2            | unwinding
+| Continue 2  | fact(3)       | 3   | 3 * 2       | 6            | unwinding
+| Continue 1  | fact(4)       | 4   | 4 * 6       | 24           | unwinding
+
+# how can stacks be used to handle recursion? 
+program will not stop executing until the top pointer of the call stack is pointing to -1. (stacks are empty if top pointer points to -1)
+
+winding - process of pushing the return address and status of program onto the call stack and takes place until base case is met. 
+unwinding - once base case is met, values from the call stack are popped and the function calls are executed. 
+

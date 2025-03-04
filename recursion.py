@@ -26,3 +26,4 @@ def sumArray(array):
         return array[0] + sumArray(array[1:])
     
 print(sumArray(arr))
+

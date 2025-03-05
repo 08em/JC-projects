@@ -9,3 +9,17 @@ car1.make = "toyota"
 car1.model = "2001"
 car1.color = "red"
 
+# notes
+- 4 pillars of oop : abstraction (only getting the important info), encapsulation (used for data hiding/grping together all the data and actions abt the data), 
+- an object is an instance of a class. a class can have any number of objects/instances
+- instantiation / instantiate = creating/constructing an instance/object of a class
+- constructor = special method  written inside the class used to construct the objects. allows you to create personalized objects instead of default objects
+- destructor =
+
+2 types of variables
+- variables that belong to the class are called class variables, these variables belong to every object : is defined outside the constructor
+- instance variables belong only to the object : are defined inside the constructor
+
+getters = accessors
+setters = mutators
+

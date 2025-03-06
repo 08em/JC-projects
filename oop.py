@@ -56,15 +56,32 @@ class Person:
     def setName(self, newName):
         self.__name = newName
     
+    def printDetails(self):
+        print(f"Name: {self.__name}, DoB: {self.__DoB}, Gender: {self.__gender} ")
 
-    
+class Teacher(Person):
+    def __init__(self, name, DoB, gender, salary):
+        super().__init__(name, DoB, gender)
+        self.salary = salary
+
+    def printDetails(self):
+        print(f"Name: {self.getName()}, DoB: {self.getDoB()}, Gender: {self.getGender()}, Salary : {self.salary}")
+
+class Student(Person):
+    def __init__(self, name, DoB, gender, grade):
+        super().__init__(name, DoB, gender)
+        self.grade = grade
+
+    def printDetails(self):
+        print(f"Name: {self.getName()}, DoB: {self.getDoB()}, Gender: {self.getGender()}, Grade : {self.grade}")
+
 
 person1 = Person("Shuaib", "20/07/1960", "Male")
 person2 = Person("John", "01/02/1999", "Male")
 person3 = Person("Aliyah", "03/04/2005", "Female")
 
 # print(person1.__name, person1.__DoB, person1.__gender)
-print(person1.getName(), person1.getDoB(), person1.getGender()) 
+# print(person1.getName(), person1.getDoB(), person1.getGender()) 
 # print(person2.name, person2.DoB, person2.gender)
 # print(person3.name, person3.DoB, person3.gender)
 
@@ -74,4 +91,12 @@ print(Person.personCount)
 print(person1.personCount) # doesnt print 1 because personCount is a class variable, so its the same for every object
 
 person1.setName("Alex")
-print(person1.getName(), person1.getDoB(), person1.getGender()) 
+# print(person1.getName(), person1.getDoB(), person1.getGender()) 
+person1.printDetails()
+person2.printDetails()
+person3.printDetails()
+
+teacher1 = Teacher("Allan", "21/12/1990", "Male", 20000)
+teacher1.printDetails()
+
+student1 = Student("Amy", "03/08/2000", "Female", 90)

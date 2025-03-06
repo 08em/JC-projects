@@ -10,7 +10,12 @@ car1.model = "2001"
 car1.color = "red"
 
 # notes
-- 4 pillars of oop : abstraction (only getting the important info), encapsulation (used for data hiding/grping together all the data and actions abt the data), 
+- 4 pillars of oop : 
+1. abstraction (only getting the important info)
+2. encapsulation (used for data hiding/grping together all the data and actions abt the data), 
+3. polymorphism - when a subclass modifies a method from the parent class to add its own additional functionality
+4. 
+
 - an object is an instance of a class. a class can have any number of objects/instances
 - instantiation / instantiate = creating/constructing an instance/object of a class
 - constructor = special method  written inside the class used to construct the objects. allows you to create personalized objects instead of default objects
@@ -23,3 +28,39 @@ car1.color = "red"
 getters = accessors
 setters = mutators
 
++-----------------+--------------------------------------------------+
+|                         Person                                     |
++-----------------+--------------------------------------------------+
+| Name : STRING   | // Name of person                                |
+| DoB : DATE      | // Date of birth of person                       |  attributes/properties
+| Gender : STRING | // Gender of person                              |
++-----------------+--------------------------------------------------+
+| Constructor()   | // method to construct object ; takes the name,  |
+|                 | DoB, gender of object                            |  methods
+| Walk()          |                                                  |
+| Run()           |                                                  |
++-----------------+--------------------------------------------------+
+
+> inheritance
+IS A - used to establish inheritance
+ex. 
+Teacher IS A Person
+Student IS A Person
+^ Teacher and Student are child classes/sub classes, Person is a parent class/super class
+child classes will get all the attributes and methods of the parent class
+child classes can still have their own attributes and methods independent of the parent class
+child classes can modify methods from the parent class to add its own additional functionality (this is called polymorphism)
+
+method overriding - allows one to have multiple methods w the same name but w diff no. of arguments, types of arguments, order of arguments 
+ex. 
+def add(a,b):
+   return a + b
+
+def add(a,b,c):
+   return a + b + c
+
+computer will check how many arguments are being passed and use that info to determine which 'add' function to use
+difference between method overriding and polymorphism is 
+
+any private attributes in the parent class cannot be accessed by the subclass w/o using getters and setters
+subclass/child class can have multiple parents, hence they have multiple inheritance, however this is very complex to manage/maintain

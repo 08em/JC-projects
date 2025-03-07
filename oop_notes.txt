@@ -43,9 +43,8 @@ setters = mutators
 
 > inheritance
 IS A - used to establish inheritance
-ex. 
-Teacher IS A Person
-Student IS A Person
+ex. Teacher IS A Person
+    Student IS A Person
 ^ Teacher and Student are child classes/sub classes, Person is a parent class/super class
 child classes will get all the attributes and methods of the parent class
 child classes can still have their own attributes and methods independent of the parent class
@@ -64,3 +63,12 @@ difference between method overriding and polymorphism is
 
 any private attributes in the parent class cannot be accessed by the subclass w/o using getters and setters
 subclass/child class can have multiple parents, hence they have multiple inheritance, however this is very complex to manage/maintain
+
+containment/aggregation - defined when one class has reference to another class
+HAS - used to establish this
+ex. ClassA HAS ClassB
+
+composition (*not in syllabus) - one class cannot exist without the other class ; life xpectancy of one class depends on the other class
+- difference between composition and containment is if classA and classB can exist independently of each other 
+ex. Building HAS Room ; (composition) (room cannot exist without building ; the building cannot exist if room is taken out)
+    Library HAS Book ; containment (a library can exist without a book ; a book can exist without a library)

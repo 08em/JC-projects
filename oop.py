@@ -81,9 +81,9 @@ person2 = Person("John", "01/02/1999", "Male")
 person3 = Person("Aliyah", "03/04/2005", "Female")
 
 # print(person1.__name, person1.__DoB, person1.__gender)
-# print(person1.getName(), person1.getDoB(), person1.getGender()) 
-# print(person2.name, person2.DoB, person2.gender)
-# print(person3.name, person3.DoB, person3.gender)
+print(person1.getName(), person1.getDoB(), person1.getGender()) 
+print(person2.name, person2.DoB, person2.gender)
+print(person3.name, person3.DoB, person3.gender)
 
 print(person1.__dict__) # only valid for python
 

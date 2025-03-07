@@ -26,22 +26,19 @@ class Picture:
         self.__Description = newDesc
 
 # d) 
-pictureArr = ["" for i in range(100)]
+pictureArr = [Picture("", 0,0) for i in range(100)]
 
 # e)
 
 def ReadData(file):
     try:
         file = open("Pictures.txt", 'r')
-        for num in range(100)
-            for i in range(100):
-                line1 = file.readline()
-                line2 = file.readline()
-                line3 = file.readline()
-                line4 = file.readline()
+        for num in range(100):
+                line1 = file.readline().strip()
+                line2 = file.readline().strip()
+                line3 = file.readline().strip()
+                line4 = file.readline().strip()
                 pictureArr[num] = Picture(line1, line2, line3, line4)
-            
-            
         
     
     except FileNotFoundError:

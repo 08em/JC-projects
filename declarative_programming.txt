@@ -1,0 +1,61 @@
+example of declarative programming language is Prolog (used to code AI)
+- in prolog, it only has a single data type called 'term'
+- prolog is case sensitive (differentiates between upper n lower case letters)
+- term can be :
+> an atom, a general purpose name w no inherent meaning that ALWAYS starts w a lower case letter
+> a number, integer or float(real)
+> a variable, denoted by an identifier that ALWAYS starts with a capital letter or an underscore
+> a compound term, a predicate, consisting of an atom and no of arguments in parentheses 
+arity - how many arguments taken
+>  
+
+3 basic components of declarative programming language:
+1. facts
+2. rules
+3. queriesn (goals)
+
+programming language is expressed using clauses (facts and rules)
+clauses always terminate w a full stop, else there will be error
+collection of clauses = knowledge base
+program is used by writing queries
+clause without a body is a fact
+
+clause :
+Head :- Body
+
+ex :
+capitalCity(paris).
+capitalCity(berlin).
+capitalCity(cairo).
+
+- meaning of capitalCity - paris is a capital city 
+- capitalCity(paris) is a compound term w arity 1
+- the 3 lines form a knowledge base
+
+- if we query :
+capitalCity(paris) , prolog will return True
+
+
+cityinCountry(paris, france). /*Paris is a city in France*/
+cityinCountry(berlin, germany).
+cityinCountry(munich, germany).
+cityinCountry(cairo, egypt).
+
+- comments in prolog are made using /**/
+- semicolon (:) is OR, comma (,) is AND, backslash (\) is NOT
+
+- if we query:
+cityinCountry(berlin, X), prolog will return X = germany
+cityinCountry(City, germany), prolog will return City = berlin
+                                                 City = munich
+
+parent(fred, jack). /*fred is the father of jack */
+parent(fred, alia).
+parent(fred, paul).
+parent(dave, fred).
+
+- clauses :
+grandparent(Grandparent,Child) :- parent(Grandparent,Parent), parent(Parent,Child). 
+sibling(A,B) :- parent(Parent, A), parent(Parent, B), NOT (A \= B). 
+/*if we query sibling(jack, X). , X will return jack, alia, paul, so to prevent it from returning jack again, we put NOT (A\=B) */
+

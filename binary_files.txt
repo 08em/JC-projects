@@ -1,0 +1,78 @@
+methods - serial, sequential , random (in random, can read and write at the same time)
+
+hash function - takes value of a key field and returns the address
+SEEK - 
+
+records cannot be stored in a text field
+use binary files to store anything except text
+how to open new record - newFile.dat
+READLINE - GETRECORD
+WRITEKINE = PUTRECORD
+
+how to open :
+
+OPENFILE "newFile.dat" FOR RANDOM
+
+# sequential files
+    TYPE studentRecord
+        DECLARE stdID : INTEGER 
+        DECLARE Name : STRING
+    ENDTYPE
+
+    DECLARE student1 : studentRecord
+    DECLARE studentFile : STRING
+    DECLARE studentNewFile : STRING
+    DECLARE recordAdded : BOOLEAN
+
+    studentFile <- "studentInfo.dat"
+    studentNewFile <- "studentTemp.dat"
+
+    OPENFILE studentFile FOR APPEND
+    OUTPUT "enter student ID:"
+    INPUT student1.stdID
+    WHILE student1.stdID <> -1
+        OUTPUT "enter student name:"
+        INPUT student1.Name
+        PUTRECORD studentFile, student1 
+        OUTPUT "enter student ID:"
+        INPUT student1.stdID
+    ENDWHILE
+    CLOSEFILE studentFile
+
+    OPENFILE studentFile FOR READ
+    WHILE NOT EOF(studentFile)
+        GETRECORD studentFile, student1
+        OUTPUT student1.Name, student1.stdID
+    ENDWHILE
+    CLOSEFILE studentFile
+
+# adding record in between
+
+    OPENFILE studentFile FOR READ
+    OPENFILE studentNewFile FOR WRITE
+
+    OUTPUT "enter student ID:"
+    INPUT student1.stdID
+    OUTPUT "enter student name:"
+    INPUT student1.Name
+    WHILE recordAdded = FALSE 
+        GETRECORD studentFile, studentTemp
+        IF studentTemp.stdID < student1.stdID THEN 
+            PUTRECORD studentNewFile, studentTemp
+        ELSE 
+            PUTRECORD studentNewFile, student1
+            recordAdded <- True
+        ENDIF
+    ENDWHILE
+
+    WHILE NOT EOF(studentFile)
+        GETRECORD studentFile, studentTemp
+        PUTRECORD studentNewFile, studentTemp
+    ENDWHILE
+
+    CLOSEFILE studentFile
+    CLOSEFILE studentNewFile
+    DELETE studentFile
+    RENAME studentNewFile, studentFile
+
+

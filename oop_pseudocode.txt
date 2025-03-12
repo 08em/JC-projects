@@ -1,0 +1,73 @@
+# class declaration
+
+CLASS Person
+    PRIVATE Name : STRING       # can be PRIVATE/PUBLIC, but its a good practice to make everyth private
+    PRIVATE Age : INTEGER
+
+    PUBLIC PROCEDURE NEW(PName : STRING, PAge : INTEGER) # the constructor name must ALWAYS be NEW 
+        Name <- PName
+        Age <- PAge
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE setName(PName : STRING)
+        Name <- PName    
+    
+    PUBLIC PROCEDURE setAge(PAge : STRING)
+        Age <- PAge    
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION getName() RETURNS STRING
+        RETURN Name
+    ENDFUNCTION
+
+    PUBLIC FUNCTION getAge() RETURNS INTEGER
+        RETURN Age
+    ENDFUNCTION
+
+ENDCLASS
+
+# inheritance
+
+CLASS Student INHERITS Person
+    PRIVATE Grade : CHAR
+
+    PUBLIC PROCEDURE NEW(PName : STRING, PAge : INTEGER, PGrade : CHAR)
+        SUPER.NEW(PName, PAge)
+        Grade <- PGrade
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE setGrade(PGrade : CHAR)
+        Grade <- PGrade    
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION getGrade() RETURNS CHAR
+        RETURN Grade
+    ENDFUNCTION
+
+ENDCLASS
+
+# how to declare an object
+
+student1 <- NEW("Ian", 16, 'A')
+student2 <- NEW("Emily", 16, 'A')
+
+OUTPUT student1.getName()
+OUTPUT student1.getAge()
+OUTPUT student1.getGrade()
+
+student1.setGrade('B')
+
+# exception handling
+
+TRY
+    OPENFILE studentFile FOR READ
+    GETRECORD studentFile, student1
+EXCEPT 
+    OUTPUT "file was not found!"
+ENDTRY
+
+TRY
+    Quot <- num1 / num2
+EXCEPT
+    OUTPUT "division by 0 is not possible"
+ENDTRY

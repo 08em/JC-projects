@@ -1,4 +1,4 @@
-class Car :         # ALWAYS start with capital lerrer for defining class
+class Car :         # ALWAYS start with capital letter for defining class
     def __init__(self, make, model, color):     # python calls constructor an initializer
         self.make = make
         self.model = model

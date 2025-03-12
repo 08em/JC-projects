@@ -1,7 +1,7 @@
 methods - serial, sequential , random (in random, can read and write at the same time)
 
 hash function - takes value of a key field and returns the address
-SEEK - 
+SEEK - moves pointer to that address in the record
 
 records cannot be stored in a text field
 use binary files to store anything except text
@@ -9,6 +9,7 @@ how to open new record - newFile.dat
 READLINE - GETRECORD
 WRITEKINE = PUTRECORD
 
+to avoid overwriting records with random files, can use opened or closed hashing method # refer to ch13
 how to open :
 
 OPENFILE "newFile.dat" FOR RANDOM
@@ -27,6 +28,7 @@ OPENFILE "newFile.dat" FOR RANDOM
     studentFile <- "studentInfo.dat"
     studentNewFile <- "studentTemp.dat"
 
+    # serial files
     OPENFILE studentFile FOR APPEND
     OUTPUT "enter student ID:"
     INPUT student1.stdID
@@ -46,7 +48,7 @@ OPENFILE "newFile.dat" FOR RANDOM
     ENDWHILE
     CLOSEFILE studentFile
 
-# adding record in between
+# adding file in between
 
     OPENFILE studentFile FOR READ
     OPENFILE studentNewFile FOR WRITE
@@ -55,24 +57,63 @@ OPENFILE "newFile.dat" FOR RANDOM
     INPUT student1.stdID
     OUTPUT "enter student name:"
     INPUT student1.Name
-    WHILE recordAdded = FALSE 
+    recordAdded <- FALSE
+
+    WHILE recordAdded = FALSE AND NOT EOF(studentFile)
         GETRECORD studentFile, studentTemp
         IF studentTemp.stdID < student1.stdID THEN 
             PUTRECORD studentNewFile, studentTemp
         ELSE 
             PUTRECORD studentNewFile, student1
-            recordAdded <- True
+            recordAdded <- TRUE
         ENDIF
     ENDWHILE
 
-    WHILE NOT EOF(studentFile)
-        GETRECORD studentFile, studentTemp
-        PUTRECORD studentNewFile, studentTemp
-    ENDWHILE
+    IF EOF(studentFile) THEN
+        PUTRECORD studentNewFile, student1
+    ELSE
+        WHILE NOT EOF(studentFile)
+            GETRECORD studentFile, studentTemp
+            PUTRECORD studentNewFile, studentTemp
+        ENDWHILE
+    ENDIF
 
     CLOSEFILE studentFile
     CLOSEFILE studentNewFile
     DELETE studentFile
     RENAME studentNewFile, studentFile
 
+    # random files
 
+    DECLARE student1 : studentRecord
+    DECLARE studentFile : STRING
+    DECLARE address : INTEGER
+
+
+    studentFile <- "studentInfo.dat"
+    OPENFILE studentFile FOR RANDOM
+
+    OUTPUT "enter student ID:"
+    INPUT student1.stdID
+    OUTPUT "enter student name:"
+    INPUT student1.Name
+
+    address <- hash(student1.stdID)
+    SEEK(studentFile, address)
+
+    PUTRECORD studentFile,  # if location already has record, it will overwrite the existing record
+
+    CLOSEFILE studentFile
+
+    # finding a record in a random file
+    OPENFILE studentFile FOR RANDOM
+
+    OUTPUT "enter student id : "
+    INPUT student1.stdID
+
+    address <- Hash(student1.stdID)
+    SEEK(student1.stdID, address)
+
+    GETRECORD studentFile, student1
+
+    CLOSEFILE studentFile

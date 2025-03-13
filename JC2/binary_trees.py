@@ -1,4 +1,4 @@
-
+# how to declare binary tree: 
 # tree = [[-1, i+1, -1] for i in range(10)]
 # tree[9][1] = -1
 

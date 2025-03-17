@@ -76,7 +76,7 @@ FreeNode = 0 # of type integer
 def AddNode(array):
     global RootPointer, FreeNode
     newItempointer = 0
-    num = input("enter node to be added to the tree: ")''
+    num = input("enter node to be added to the tree: ")
     if FreeNode == -1 :
         print("tree is full")
     else: 

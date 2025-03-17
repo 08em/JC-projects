@@ -4,7 +4,7 @@
 
 stackArray = [None for i in range(10)]
 
-stackFull = len(stackArray) - 1
+stackFull = len(stackArray)
 basePointer = 0
 topPointer = -1
 

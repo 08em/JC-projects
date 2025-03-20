@@ -20,11 +20,26 @@ for i in range(30):
         colour = file.readline().strip()
         CardArray[i] = Card(num, colour)
 
-# d)
-def ChooseCard():
-    cardNum = int(input("enter value: "))
-    if cardNum < 1 or cardNum > 30 :
-          print("number must be between 1 and 30")
-          cardNum = int(input("enter value: "))
-    else: 
+# d) EDIT THIS CODE
+chosenCards = []
 
+def ChooseCard():
+    cardNum = int(input("enter card number between 1 and 30: "))
+    if cardNum < 1 or cardNum > 30 :
+        print("number must be between 1 and 30")
+        cardNum = int(input("enter value: "))
+    else:
+         chosenCards.append(cardNum)
+         return cardNum - 1
+
+
+# e) i.
+
+player1 = [Card(0, "")]  # of Card
+
+ChooseCard()
+ChooseCard()
+ChooseCard()
+ChooseCard()
+
+# ii. screenshot

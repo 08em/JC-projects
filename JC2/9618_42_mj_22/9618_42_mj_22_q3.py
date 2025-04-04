@@ -20,26 +20,41 @@ for i in range(30):
         colour = file.readline().strip()
         CardArray[i] = Card(num, colour)
 
-# d) EDIT THIS CODE
-chosenCards = []
+# d)
+chosenCards = [0 for _ in range(30)]
+
+chosenCards = [0 for _ in range(30)]
 
 def ChooseCard():
-    cardNum = int(input("enter card number between 1 and 30: "))
-    if cardNum < 1 or cardNum > 30 :
-        print("number must be between 1 and 30")
-        cardNum = int(input("enter value: "))
-    else:
-         chosenCards.append(cardNum)
-         return cardNum - 1
+    selected = False
+    while selected == False:
+        cardNum = int(input("enter card number between 1 and 30 inclusive: "))
+        if cardNum < 1 or cardNum > 30 :
+            print("number must be between 1 and 30")
+            cardNum = int(input("enter card number between 1 and 30 inclusive: "))
+        elif chosenCards[cardNum-1] == 1:
+            print("card already chosen, please choose another card")
+        else:
+            print(f"card {cardNum} is available")
+            chosenCards[cardNum-1] = 1
+            selected = True
 
+    return cardNum-1 #returns INDEX of the card if available
+
+print(chosenCards)
 
 # e) i.
 
-player1 = [Card(0, "")]  # of Card
+player1 = [Card(0, "") for i in range(4)]  # of Card
 
-ChooseCard()
-ChooseCard()
-ChooseCard()
-ChooseCard()
+for i in range(4):
+    num = ChooseCard()
+    player1[i] = CardArray[num]
+
+for i in range(4):
+    print(player1[i].GetNumber())
+    print(player1[i].GetColour())
 
 # ii. screenshot
+# test 1 : 1, 5, 9, 10
+# test 2 : 2, 2, 3, 4, 4, 5

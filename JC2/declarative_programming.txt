@@ -7,7 +7,6 @@ example of declarative programming language is Prolog (used to code AI)
 > a variable, denoted by an identifier that ALWAYS starts with a capital letter or an underscore
 > a compound term, a predicate, consisting of an atom and no of arguments in parentheses 
 arity - how many arguments taken
->  
 
 3 basic components of declarative programming language:
 1. facts

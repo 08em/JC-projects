@@ -100,3 +100,18 @@ teacher1 = Teacher("Allan", "21/12/1990", "Male", 20000)
 teacher1.printDetails()
 
 student1 = Student("Amy", "03/08/2000", "Female", 90)
+
+# for reading a file and making it into array of objects where no. of objects is unknown, use :
+# file = open("JC2/EmployeeFile.txt", 'r')
+# line = file.readline().strip()
+# i = 0
+# while line != "":
+#     AllEmployees[i].setName(line)
+#     line = file.readline().strip()
+#     AllEmployees[i].setEmployeeID(line)
+#     line = file.readline().strip()
+#     AllEmployees[i].setDepartment(line)
+#     line = file.readline().strip()
+#     i = i + 1
+
+# otherwise, if no. of objects is known, just use a for loop

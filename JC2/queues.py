@@ -3,34 +3,34 @@ frontPointer = 0
 rearPointer = -1
 maxSize = len(queue)
 lenOfQueue = 0
-dequeuedItem = 0
 
 def enqueue(item):
-    global lenOfQueue, rearPointer
+    global lenOfQueue, rearPointer, frontPointer
     if lenOfQueue == maxSize :
         print("queue is full")
     else:
         if rearPointer == maxSize - 1:
             rearPointer = 0
-
-        rearPointer = rearPointer + 1
-        queue[rearPointer] = item
-        lenOfQueue = lenOfQueue + 1
+        else: 
+            rearPointer = rearPointer + 1
+            queue[rearPointer] = item
+            lenOfQueue = lenOfQueue + 1
 
 
 def dequeue():
-    global lenOfQueue, frontPointer, dequeuedItem
+    global lenOfQueue, frontPointer
     if lenOfQueue == 0:
         print("queue is empty")
     else:
-        dequeuedItem = queue[frontPointer]
+        item = queue[frontPointer]
         lenOfQueue = lenOfQueue - 1
 
         if frontPointer == maxSize - 1:
             frontPointer = 0
         else:
             frontPointer = frontPointer + 1
-
+            
+        return item
 
 enqueue(5)
 print(queue)

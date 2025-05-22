@@ -25,19 +25,22 @@ PROCEDURE push(data:INTEGER)
             OUTPUT "stack full, cannot push item onto stack"
         ELSE
             topPointer <- topPointer + 1
-            stack[topPointer] <- data'
+            stack[topPointer] <- data
     ENDIF
 
 ENDPROCEDURE
 
 
-PROCEDURE pop()
-
+FUNCTION pop() RETURNS INTEGER
+    DECLARE value : INTEGER
     IF topPointer = -1
         THEN
             OUTPUT "stack empty, cannot pop any item"
+            RETURN -1
         ELSE
+            value <- stack[topPointer]
             topPointer <- topPointer - 1
+            RETURN value
     ENDIF
 
-ENDPROCEDURE
+ENDFUNCTION

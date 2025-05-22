@@ -21,9 +21,11 @@ def pop():
     global topPointer
     if topPointer == -1:
         print("stack is empty, cannot push any item")
+        return -1
     else:
-        print("item being removed is", stackArray[topPointer])
+        value = stackArray[topPointer]
         topPointer = topPointer - 1
+        return value
 
 push(3)
 push(6)
@@ -37,8 +39,3 @@ pop()
 
 print(stackArray)
 print(topPointer)
-
-# reverse queue using stack
-
-queueArray = [2, 6, 4, 9, 1]
-

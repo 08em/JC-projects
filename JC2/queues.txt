@@ -8,12 +8,44 @@ FOR Count <- 1 TO 5
         queue[Count] = 0
 NEXT Count
 
-frontPointer <- 
-rearPointer <-
-frontPointer <- 
-rearPointer <-
+frontPointer <- 0
+rearPointer <- -1
+lenOfQueue <- 0
+maxSize <- LENGTH(queue)
 
 
 PROCEDURE enqueue(item:INTEGER)
-    IF 
+    IF lenOfQueue = maxSize THEN
+        OUTPUT "queue full"
+    ELSE
+        IF rearPointer = maxSize THEN
+            rearPointer <- 0
+        ELSE
+            rearPointer <- rearPointer + 1
+        ENDIF
+
+        queue[rearPointer] <- item
+        lenOfQueue <- lenOfQueue + 1
+    
+    ENDIF
 ENDPROCEDURE
+
+FUNCTION dequeue() RETURNS INTEGER
+    DECLARE value : INTEGER
+
+    IF lenOfQueue = 0 THEN
+        OUTPUT "queue empty"
+        RETURN -1
+    ENDIF
+
+    value <- queue[frontPointer]
+    lenOfQueue <- lenOfQueue - 1
+
+    IF frontPointer = maxSize -1 THEN
+        frontPointer <- 0
+    ELSE 
+        frontPointer <- frontPointer + 1
+    ENDIF
+
+    RETURN value
+ENDFUNCTION

@@ -11,6 +11,7 @@ print(len(char1)) #in pseudocode, length of a character is always 1
 # in python, string is an array of characters ; in pseudocode, a string is a sequence of characters
 
 print(string1[0])
+print(string1[0])
 
 for char in range(len(string1)):
     print(string1[char])
